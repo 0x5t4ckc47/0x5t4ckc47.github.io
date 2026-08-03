@@ -3,8 +3,8 @@ title: smarthire-htb
 published: 2026-08-03
 description: 'HackTheBox SmartHire Medium'
 image: ''
-tags: []
-category: 'htb, linux, web, python'
+tags: [htb, linux, web, python]
+category: 'HTB-writeup'
 draft: false 
 lang: ''
 ---
