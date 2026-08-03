@@ -10,7 +10,9 @@
   1. HackTheBox: [0x5t4ckc47's HackTheBox Profile](https://profile.hackthebox.com/profile/019d62e2-878a-73c3-9497-f8d7c1df24e0)
   2. TryHackMe: [0x5t4ckc47's TryHackMe Profile](https://tryhackme.com/p/0x5t4ckc47)
 
-你可以在这里找到我(注: 这不是我的群): `257042424`
+你可以在以下地方找到我
+  1. `257042424` (注: 这不是我的群)
+  2. `1097327824` (注: 这个是我的)
 
 *Happy Hacking*
 
