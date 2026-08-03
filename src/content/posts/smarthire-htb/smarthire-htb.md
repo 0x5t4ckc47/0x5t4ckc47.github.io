@@ -65,7 +65,9 @@ Content-Length: 645
 
 ### CVE-2024-37054
 banner 指出版本为 `2.14.1`, 公开利用指向 [CVE-2024-37054](https://github.com/ben-slates/CVE-2024-37054):
->[!quote] MLflow Tracking Server deserializes model artifacts via Python's `pickle` module when loading models for inference. An authenticated attacker can overwrite the `python_model.pkl` artifact in MLflow's artifact repository with a malicious pickle payload. When the model is subsequently loaded (e.g., during a prediction request), the payload is deserialized, executing arbitrary code on the server.
+:::quote
+MLflow Tracking Server deserializes model artifacts via Python's `pickle` module when loading models for inference. An authenticated attacker can overwrite the `python_model.pkl` artifact in MLflow's artifact repository with a malicious pickle payload. When the model is subsequently loaded (e.g., during a prediction request), the payload is deserialized, executing arbitrary code on the server.
+:::
 
 Poc需要 app 和 mlflow server, 根据用户评价推测二者分别为 `smarthire.htb` 和 `models.smarthire.htb`
 ```sh
@@ -134,7 +136,7 @@ User svcweb may run the following commands on smarthire:
 ```
 
 ## mlflowctl.py .pth injection
-```Python
+```python
 from pathlib import Path
 import sys
 import site
@@ -157,13 +159,18 @@ if __name__ == "__main__": main()
 
 其会从 `/opt/tools/mlflow_ctl/plugins` 目录中的每个目录下加载模块, 即将其添加到 `sys.path` 末尾
 
->[!fail] 模块加载是从 `sys.path` 开始进行索引, 模块覆盖在该条件下无法实现
-
+:::important
+模块加载是从 `sys.path` 开始进行索引, 模块覆盖在该条件下无法实现
+:::
 但 `site.addsitedir()` 同时会加载该目录下的 `.pth` 文件
 
->[!quote] An executable line in a `.pth` file is run at every Python startup, regardless of whether a particular module is actually going to be used.
+:::quote
+An executable line in a `.pth` file is run at every Python startup, regardless of whether a particular module is actually going to be used.
+:::
 
->[!quote] Starting with Python 3.5, lines in .pth files starting with “import” followed by a space or tab are executed. - https://dfir.ch/posts/publish_python_pth_extension/
+:::quote
+Starting with Python 3.5, lines in .pth files starting with “import” followed by a space or tab are executed. - https://dfir.ch/posts/publish_python_pth_extension/
+:::
 
 即可以在 `.pth` 中的 `import` 开头的行中放置载荷, 其会被执行:
 ```sh
