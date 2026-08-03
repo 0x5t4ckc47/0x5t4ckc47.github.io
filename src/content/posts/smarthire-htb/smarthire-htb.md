@@ -27,7 +27,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 # 80 - Web
 ## smarthire.htb
 访问 IP 重定向到 `smarthire.htb`, 添加 hosts.
-![[smarthire-web.png]]
+![Main Page](smarthire-web.png)
 
 技术栈没有给出多少信息
 ```http
@@ -41,9 +41,10 @@ Content-Length: 11255
 ```
 
 有趣的是, 用户评价指出该平台集成了 Mlflow, 后者是一个是一个开源的 AI 工程平台, 适用于智能体、LLM 和模型
-![[smarthire-web-testimonials.png]]
+![User Comment](smarthire-web-testimonials.png)
 
-功能需要登陆, 注册一个账户并登陆, 一个 AI 模型训练的工作站:![[smarthire-web01.png]]
+功能需要登陆, 注册一个账户并登陆, 一个 AI 模型训练的工作站:
+![After Login](smarthire-web01.png)
 
 ## models.smarthire.htb
 使用 ffuf 枚举, 这个子域名不在 `subdomains-top1million-5000.txt` 中. 猜测其为上文中提到的 MLFlow. 需要登陆, 尝试 mlflow 默认凭据 `admin:password`, 成功:
