@@ -16,7 +16,7 @@ lang: ''
 8001/tcp filtered vcom-tunnel no-response
 ```
 
-ttl 结果如下: 均为一跳, 端口背后服务均为主机, ttl 63 可能是前置 ovpn 代理原因
+ttl 结果如下: 均为一跳, 端口背后服务均为主机, ttl 63 符合 Linux 一跳后的 ttl 
 ```sh
 sudo lft 10.129.245.215:22
 TTL LFT trace to smarthire.htb (10.129.245.215):22/tcp
