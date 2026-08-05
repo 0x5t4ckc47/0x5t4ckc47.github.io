@@ -6,7 +6,7 @@ import I18nKey from "../i18n/i18nKey";
 import { i18n } from "../i18n/translation";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 
-const friendsPost = await getEntry('spec', 'friends');
+const friendsPost = await getEntry("spec", "friends");
 
 if (!friendsPost) {
 	throw new Error("Friends page content not found");
@@ -14,15 +14,14 @@ if (!friendsPost) {
 
 const { Content } = await render(friendsPost);
 const items = [
-  {
-    title: 'Expl0rer.Ct',
-    imgurl: 'https://expl0rer.top/img/avatar_hu_ad80615c0162fcaf.png',
-    desc: '吾将上下而求索',
-    siteurl: 'https://expl0rer.top/',
-    tags: ['friends'],
-  },
-]
-
+	{
+		title: "Expl0rer.Ct",
+		imgurl: "https://expl0rer.top/img/avatar_hu_ad80615c0162fcaf.png",
+		desc: "吾将上下而求索",
+		siteurl: "https://expl0rer.top/",
+		tags: ["friends"],
+	},
+];
 ---
 <MainGridLayout title={i18n(I18nKey.friends)} description={i18n(I18nKey.friends)}>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
