@@ -14,7 +14,7 @@
   1. `257042424` (注: 这不是我的群)
   2. `1097327824` (注: 这个是我的)
 
-My Discord: https://discord.gg/EfUH5Mf29
+My Discord: https://discord.com/invite/eRKjA5U5z
 
 *Happy Hacking*
 
