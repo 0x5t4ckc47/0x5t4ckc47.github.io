@@ -400,7 +400,7 @@ DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c0
 
 
 ### NTDS.dit
-```title=sd
+```txt
 set context persistent nowriters
 set metadata c:\Users\jmurphy\temp\metadata.cab
 add volume c: alias trophy
