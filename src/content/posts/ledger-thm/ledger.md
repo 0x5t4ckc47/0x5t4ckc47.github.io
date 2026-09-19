@@ -3,7 +3,7 @@ title: ledger-thm
 published: 2026-09-08
 description: '看素晴去了'
 image: ''
-tags: [thm, AD, ADCS, ldap, smb, kerberos, ESC]
+tags: [ad, windows, adcs, ldap, smb, kerberos, esc]
 category: 'THM-writeup'
 draft: false 
 lang: ''

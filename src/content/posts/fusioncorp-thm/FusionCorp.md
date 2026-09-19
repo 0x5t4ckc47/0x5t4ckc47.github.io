@@ -3,7 +3,7 @@ title: FusionCorp-thm
 published: 2026-09-09
 description: '没时间看素晴了..悲'
 image: ''
-tags: [AD, smb, ldap, kerberos, ntds, sam, SeBackupPrivilege, web]
+tags: [ad, windows, smb, ldap, kerberos, ntds, sam, SeBackupPrivilege, web, vss]
 category: 'THM-writeup'
 draft: false 
 lang: ''

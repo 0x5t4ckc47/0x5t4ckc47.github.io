@@ -3,7 +3,7 @@ title: principal-htb
 published: 2026-08-03
 description: 'HackTheBox principal Linux Medium'
 image: ''
-tags: [htb, linux, web, ssh, CA]
+tags: [linux, web, ssh, ca]
 category: 'HTB-writeup'
 draft: false 
 lang: ''

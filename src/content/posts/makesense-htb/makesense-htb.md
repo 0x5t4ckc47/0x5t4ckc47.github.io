@@ -3,7 +3,7 @@ title: makesense-htb
 published: 2026-08-04
 description: 'Fuck'
 image: ''
-tags: [htb, linux, web, js, wordpress]
+tags: [linux, web, js, wordpress]
 category: 'HTB-writeup'
 draft: false 
 lang: ''

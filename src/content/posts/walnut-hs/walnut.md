@@ -3,7 +3,7 @@ title: walnut-hs
 published: 2026-09-05
 description: '终将好看, 素晴好看'
 image: ''
-tags: [linux, nfs, ldap, smb, hacksmater]
+tags: [linux, nfs, ldap, smb]
 category: 'hacksmater-writeup'
 draft: false 
 lang: ''

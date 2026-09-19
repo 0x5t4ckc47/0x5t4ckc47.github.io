@@ -3,7 +3,7 @@ title: support-htb
 published: 2026-08-03
 description: 'HackTheBox support windows easy '
 image: ''
-tags: [htb, windows, AD, ldap, re, dcsync, ]
+tags: [windows, ad, ldap, re, dcsync, ]
 category: 'HTB-writeup'
 draft: false 
 lang: ''

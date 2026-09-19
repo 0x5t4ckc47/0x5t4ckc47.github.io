@@ -3,7 +3,7 @@ title: OperationEndgame-thm
 published: 2026-09-11
 description: '看红传说差点笑死'
 image: ''
-tags: [AD, windows, asreproasting, kerberoasting, acl, rdp, ldap, kerberos]
+tags: [ad, windows, asreproasting, kerberoasting, acl, rdp, ldap, kerberos]
 category: 'THM-writeup'
 draft: false 
 lang: ''
