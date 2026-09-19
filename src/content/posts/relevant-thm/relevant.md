@@ -1,7 +1,7 @@
 ---
 title: relevant
 published: 2026-09-19
-description: ''
+description: '老 box 就是劲, 兔子洞批发不要钱'
 image: ''
 tags: [windows, web, smb, aspx, printspoofer, SeImpersonatePrivilege]
 category: 'THM-writeup'
