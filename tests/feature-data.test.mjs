@@ -30,34 +30,7 @@ describe("Feature Data & Resolver Tests", () => {
 			categories: [],
 			disabledKeys: ["folkpatch"],
 		};
-		const items = [
-			{
-				key: "shirone",
-				title: "Shirone",
-				summary: "Blog theme",
-				category: "theme",
-				phase: "shipped",
-				technologies: [],
-			},
-			{
-				key: "kernelpatch",
-				title: "KernelPatch",
-				summary: "Kernel patching toolkit",
-				category: "android",
-				phase: "building",
-				technologies: [],
-			},
-			{
-				key: "folkpatch",
-				title: "FolkPatch",
-				summary: "Android patching project",
-				category: "android",
-				phase: "exploring",
-				technologies: [],
-			},
-		];
-
-		const resolved = resolveProjectsData(config, items);
+		const resolved = resolveProjectsData(config);
 		assert.ok(resolved.some((p) => p.key === "shirone"));
 		assert.ok(resolved.some((p) => p.key === "kernelpatch"));
 		assert.ok(!resolved.some((p) => p.key === "folkpatch"));
@@ -81,19 +54,9 @@ describe("Feature Data & Resolver Tests", () => {
 			order: "asc",
 			disabledTitles: ["Senior Frontend Engineer"],
 		};
-		const items = [
-			{
-				title: "Computer Science & Engineering Degree",
-				date: "2020.09 - 2024.06",
-			},
-			{
-				title: "Senior Frontend Engineer",
-				date: "2024.07 - Present",
-			},
-		];
-
-		const resolved = resolveTimelineData(config, items);
+		const resolved = resolveTimelineData(config);
 		assert.ok(!resolved.some((t) => t.title === "Senior Frontend Engineer"));
+		// timelineData 中最旧的条目是 2020.09 – 2024.06 (Computer Science & Engineering Degree)
 		assert.equal(resolved[0].title, "Computer Science & Engineering Degree");
 	});
 

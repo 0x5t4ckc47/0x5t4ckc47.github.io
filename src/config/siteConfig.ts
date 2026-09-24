@@ -57,7 +57,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 		// desktop 用于 >= 1024px；mobile 仅用于 < 1024px 的首页，手机非首页不显示壁纸。
 		// 数组顺序就是轮播顺序；只需要静态 Banner 时，每组保留一张图片即可。
 		src: {
-			desktop: ["assets/images/banner/desktop/blogbanner.jpg"],
+			desktop: ["assets/images/banner/desktop/banner2.webp"],
 			mobile: ["assets/images/banner/mobile/1.webp"],
 		},
 		// 图片裁切焦点："top"、"center" 或 "bottom"。
@@ -70,19 +70,19 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 		homeText: {
 			// 仅在首页 Banner 中显示，标题与副标题会上下居中排列。
 			enable: true,
-			title: "0x5t4ckc47",
-			subtitle: ["Just have a break ... and May be a cup of coffee?"],
+			title: "Lost in Dreams",
+			subtitle: ["Welcome to somewhere unreal.", "Just have a break ... and May be a cup of coffee?"],
 			typewriter: {
 				// 副标题逐字显示；关闭后直接显示完整副标题。
 				enable: true,
 				// 打字速度（每个字符间隔，毫秒）。
-				speed: 100,
+				speed: 75,
 				// 回退反向删除速度（每个字符间隔，毫秒）。
 				deleteSpeed: 50,
 				// 打字完成后停顿时间，单位为毫秒。
 				pauseTime: 2000,
 				// 完成后是否循环播放；关闭表示只播放一次。
-				loop: false,
+				loop: true,
 			},
 		},
 		carousel: {

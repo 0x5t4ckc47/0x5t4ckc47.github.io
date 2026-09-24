@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# integration cache (esbuild config bundles, plugin-mode font subsets)
+.shirones/
+
 # content repository working copy, provenance, and safe cleanup backups
 .content-src/
 .content-backup/
@@ -53,7 +56,6 @@ public/assets/moments/thumbnails/*
 
 # local tooling artifacts
 .zcode/
-.vscode/
 .codex-*.log
 research/
 

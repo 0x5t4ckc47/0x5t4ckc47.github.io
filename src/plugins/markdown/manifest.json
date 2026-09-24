@@ -146,7 +146,7 @@
 				"network": []
 			},
 			"docs": [
-				".agents/skills/shirone-markdown-syntax/SKILL.md",
+				"src/content/posts/markdown-abbreviations.md",
 				"docs/markdown-extensions.md"
 			],
 			"tests": [
@@ -210,7 +210,7 @@
 					"viewport preloading or explicit activation: https://www.acfun.cn/player/{acid}"
 				]
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/video.md"],
 			"tests": [
 				"tests/plugins/markdown/leaf/acfun.test.mjs",
 				"tests/site/markdown-runtime.spec.ts"
@@ -273,6 +273,7 @@
 				"network": []
 			},
 			"docs": [
+				"src/content/posts/admonitions.md",
 				"docs/markdown-extensions.md"
 			],
 			"tests": [
@@ -334,7 +335,7 @@
 					"author-declared video source; preload accepts none or auto"
 				]
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/video.md"],
 			"tests": [
 				"tests/plugins/markdown/leaf/artplayer.test.mjs",
 				"tests/site/markdown-runtime.spec.ts"
@@ -387,7 +388,10 @@
 					"author-declared audio source only after activation; preload=none"
 				]
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": [
+				"src/content/posts/audio-reader.md",
+				".agents/skills/shirone-markdown-syntax/SKILL.md"
+			],
 			"tests": [
 				"tests/plugins/markdown/inline/audio-reader.test.mjs",
 				"tests/site/markdown-runtime.spec.ts"
@@ -453,7 +457,7 @@
 					"viewport preloading or explicit activation: https://player.bilibili.com/player.html?bvid={bvid}&p={p}&high_quality=1&danmaku=0"
 				]
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/video.md"],
 			"tests": [
 				"tests/plugins/markdown/leaf/bilibili.test.mjs",
 				"tests/site/markdown-runtime.spec.ts"
@@ -526,7 +530,7 @@
 				"modules": ["src/utils/code-tree.ts"],
 				"network": []
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/markdown-enhancements.md"],
 			"tests": [
 				"tests/plugins/markdown/containers/code-tree.test.mjs",
 				"tests/site/code-tree.spec.ts"
@@ -590,6 +594,7 @@
 				"network": []
 			},
 			"docs": [
+				"src/content/posts/collapse-panels.md",
 				"docs/markdown-extensions.md"
 			],
 			"tests": [
@@ -638,7 +643,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/content-annotations.md"],
 			"tests": [
 				"tests/plugins/markdown/inline/content-annotations.test.mjs",
 				"tests/site/content-annotations.spec.ts"
@@ -730,7 +735,7 @@
 				"modules": ["src/utils/code-copy.ts", "src/utils/code-collapse.ts"],
 				"network": []
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/expressive-code.md"],
 			"tests": ["tests/site/post-encryption.spec.ts"],
 			"notes": ["元数据具体解析规则由 Expressive Code 及已注册插件定义。"]
 		},
@@ -752,10 +757,7 @@
 			"registeredIn": "src/utils/markdown-processor.mjs",
 			"styles": ["src/styles/markdown/fields.css"],
 			"runtime": {"mode": "none", "modules": [], "network": []},
-			"docs": [
-				".agents/skills/shirone-markdown-syntax/SKILL.md",
-				"docs/markdown-extensions.md"
-			],
+			"docs": ["src/content/posts/markdown-fields.md", "docs/markdown-extensions.md"],
 			"tests": ["tests/plugins/markdown/containers/fields.test.mjs"],
 			"notes": ["无效或不完整的字段标签保留为可读 Markdown；组件为纯 SSR 输出，不增加客户端运行时。"]
 		},
@@ -809,6 +811,7 @@
 				"network": []
 			},
 			"docs": [
+				"src/content/posts/markdown-enhancements.md",
 				"docs/markdown-extensions.md"
 			],
 			"tests": [
@@ -855,7 +858,8 @@
 				]
 			},
 			"docs": [
-				".agents/skills/shirone-markdown-syntax/SKILL.md"
+				"src/content/posts/markdown-extended.md",
+				"src/content/posts/guide/index.md"
 			],
 			"tests": [
 				"tests/plugins/markdown/leaf/github-card.test.mjs",
@@ -908,7 +912,7 @@
 				"modules": ["src/utils/fancybox-handler.ts"],
 				"network": ["author-declared image URLs only"]
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/image-grid-demo/index.md"],
 			"tests": [
 				"tests/plugins/image-grid.test.mjs",
 				"tests/site/image-grid.spec.ts"
@@ -952,7 +956,7 @@
 				"network": ["author-declared image URLs only"]
 			},
 			"docs": [
-				".agents/skills/shirone-markdown-syntax/SKILL.md",
+				"src/content/posts/spoilers.md",
 				"docs/markdown-extensions.md"
 			],
 			"tests": ["tests/plugins/rehype-markdown-images.test.mjs"],
@@ -1005,6 +1009,7 @@
 				"network": []
 			},
 			"docs": [
+				"src/content/posts/markdown-includes.md",
 				"docs/markdown-extensions.md"
 			],
 			"tests": ["tests/plugins/markdown/inline/includes.test.mjs"],
@@ -1053,6 +1058,7 @@
 				"network": []
 			},
 			"docs": [
+				"src/content/posts/marker-highlights.md",
 				"docs/markdown-extensions.md"
 			],
 			"tests": [
@@ -1093,7 +1099,8 @@
 				"network": []
 			},
 			"docs": [
-				".agents/skills/shirone-markdown-syntax/SKILL.md"
+				"src/content/posts/guide/index.md",
+				"src/content/posts/markdown.md"
 			],
 			"tests": [
 				"tests/plugins/markdown/katex-version.test.mjs",
@@ -1126,7 +1133,8 @@
 				"network": []
 			},
 			"docs": [
-				".agents/skills/shirone-markdown-syntax/SKILL.md"
+				"src/content/posts/markdown-mermaid.md",
+				"src/content/posts/guide/index.md"
 			],
 			"tests": ["tests/site/mermaid.spec.ts"],
 			"notes": [
@@ -1179,6 +1187,7 @@
 				"network": []
 			},
 			"docs": [
+				"src/content/posts/option-groups.md",
 				"docs/markdown-extensions.md"
 			],
 			"tests": [
@@ -1214,7 +1223,7 @@
 				"modules": ["src/utils/spoilers.ts"],
 				"network": []
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/markdown-extended.md"],
 			"tests": [
 				"tests/plugins/markdown/inline/spoilers.test.mjs",
 				"tests/site/spoilers.spec.ts"
@@ -1262,7 +1271,7 @@
 				"modules": [],
 				"network": []
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/steps.md"],
 			"tests": [
 				"tests/plugins/markdown/containers/steps.test.mjs",
 				"tests/site/steps.spec.ts"
@@ -1321,7 +1330,7 @@
 					"viewport preloading or explicit activation: https://www.youtube-nocookie.com/embed/{id}?rel=0&modestbranding=1"
 				]
 			},
-			"docs": [".agents/skills/shirone-markdown-syntax/SKILL.md"],
+			"docs": ["src/content/posts/video.md"],
 			"tests": [
 				"tests/plugins/markdown/leaf/youtube.test.mjs",
 				"tests/site/markdown-runtime.spec.ts"

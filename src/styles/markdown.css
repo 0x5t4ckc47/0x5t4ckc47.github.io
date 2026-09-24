@@ -36,7 +36,9 @@
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     display: inline;
-    overflow-wrap: break-word;
+    /* anywhere 而非 break-word：换行机会参与 min-content 计算，
+       长链接才不会在窄网格/弹性容器（如动态卡片）里撑破轨道 */
+    overflow-wrap: anywhere;
 
     &:hover,
     &:active {
@@ -48,13 +50,7 @@
   }
 
   code {
-    @apply bg-[var(--inline-code-bg)] text-[var(--inline-code-color)];
-
-    padding-block: var(--m3e-space-1);
-    padding-inline: calc(var(--m3e-space-1) * 1.5);
-    border-radius: var(--shape-corner-s);
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    @apply bg-[var(--inline-code-bg)] text-[var(--inline-code-color)] px-1 py-0.5 rounded-md overflow-hidden;
 
     font-family:
       var(--m3e-font-mono-family),
