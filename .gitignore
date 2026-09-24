@@ -12,7 +12,7 @@ Shirone-Content/
 
 # generated types
 .astro/
-
+.pnpm-store
 # dependencies
 node_modules/
 

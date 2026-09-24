@@ -23,6 +23,7 @@ const VALID_RUNTIME_MODES = new Set([
 	"client-enhanced",
 	"inline-client",
 ]);
+const CONTENT_POSTS_PREFIX = "src/content/posts/";
 
 const errors = [];
 const fail = (message) => errors.push(message);
@@ -31,7 +32,8 @@ function isNonEmptyString(value) {
 	return typeof value === "string" && value.trim().length > 0;
 }
 
-function validateRepoPath(path, owner, field) {
+function validateRepoPath(path, owner, field, options = {}) {
+	const { allowMissing = false } = options;
 	if (!isNonEmptyString(path)) {
 		fail(`${owner}.${field} 包含空路径`);
 		return;
@@ -45,7 +47,7 @@ function validateRepoPath(path, owner, field) {
 		fail(`${owner}.${field} 必须是仓库内相对路径：${path}`);
 		return;
 	}
-	if (!existsSync(join(root, ...path.split("/")))) {
+	if (!allowMissing && !existsSync(join(root, ...path.split("/")))) {
 		fail(`${owner}.${field} 指向不存在的文件：${path}`);
 	}
 }
@@ -195,7 +197,13 @@ for (const syntax of syntaxes) {
 			fail(`${owner}.${field} 必须是数组`);
 			continue;
 		}
-		for (const path of syntax[field]) validateRepoPath(path, owner, field);
+		for (const path of syntax[field]) {
+			// 内容分离模式下，src/content/posts 中的演示文章由内容仓提供，
+			// 主题仓只保留稳定的作者文档引用，不要求该文件在代码仓 checkout 中存在。
+			const allowMissing =
+				field === "docs" && path.startsWith(CONTENT_POSTS_PREFIX);
+			validateRepoPath(path, owner, field, { allowMissing });
+		}
 	}
 
 	if (!syntax.runtime || !VALID_RUNTIME_MODES.has(syntax.runtime.mode)) {

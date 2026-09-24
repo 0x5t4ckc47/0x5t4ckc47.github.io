@@ -62,11 +62,11 @@ $manifest.syntaxes | Where-Object id -eq "file-tree" | ConvertTo-Json -Depth 10
 | `styles` | 该语法依赖的样式所有者 |
 | `stylesheetPacks` | 顶层条件样式包注册表；每个包声明唯一 `id`、触发它的构建期 `syntaxes` 与实际 CSS `styles`，由服务端资源装配器直接消费 |
 | `runtime` | `mode`、客户端模块和可能产生的网络请求 |
-| `docs` | 面向作者的真实演示或使用文档 |
+| `docs` | 面向作者的真实演示或使用文档；`src/content/posts/**` 路径由内容仓管理，主题仓只校验路径格式，不要求文件存在 |
 | `tests` | 已有的语法、DOM 或页面回归测试；缺口如实保留为空数组 |
 | `notes` | 无法由其他字段表达的兼容或使用边界 |
 
-所有文件路径必须相对仓库根目录、使用 `/`，并指向真实文件。`network` 必须同时记录第三方请求和作者显式媒体 URL；空数组表示语法自身不会请求网络。
+除 `docs` 中指向 `src/content/posts/**` 的内容仓路径外，所有文件路径必须相对仓库根目录、使用 `/`，并指向真实文件。`network` 必须同时记录第三方请求和作者显式媒体 URL；空数组表示语法自身不会请求网络。
 
 ## 5. 新语法准入流程
 
@@ -96,4 +96,4 @@ pnpm.cmd check:markdown-manifest
 pnpm.cmd check:manifest
 ```
 
-校验器会检查 schema、ID 唯一性与排序、枚举值、语法形式、参数结构、运行时结构、条件样式包的特征与 CSS 唯一性，以及所有仓库路径是否存在。它不会代替语法渲染测试，也不会证明 CSS 或 Swup 生命周期正确。
+校验器会检查 schema、ID 唯一性与排序、枚举值、语法形式、参数结构、运行时结构、条件样式包的特征与 CSS 唯一性，以及仓库路径。`docs` 中指向 `src/content/posts/**` 的内容仓路径只校验格式；其余路径仍必须存在。校验器不会代替语法渲染测试，也不会证明 CSS 或 Swup 生命周期正确。
