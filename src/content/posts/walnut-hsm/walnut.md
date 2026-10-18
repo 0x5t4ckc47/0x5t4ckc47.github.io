@@ -1,10 +1,10 @@
 ---
-title: walnut-hs
+title: walnut-hsm
 published: 2026-09-05
 description: '终将好看, 素晴好看'
 image: ''
 tags: [linux, nfs, ldap, smb]
-category: 'hacksmater-writeup'
+category: 'HSM-writeup'
 draft: false 
 lang: ''
 ---
